@@ -8,5 +8,12 @@ stage('git clone')
 steps
 {git 'https://github.com/shivpip131/maven-project.git'}
 }
+stage ('compile code') {
+steps {
+withMaven(jdk: 'jdklocal', maven: 'mavenlocal') {
+    sh 'mvn compile'
+}
+}
+}
 }
 }
