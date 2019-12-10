@@ -29,14 +29,6 @@ withMaven(jdk: 'jdklocal', maven: 'mavenlocal') {
     }
     }
     }
-stage ('deploy to tomcat')
-{
-steps {
-sshagent(['tomcat']) {
-    sh 'scp -o StrictHostkeyChecking=no */target/*.war ec2-user@172.31.14.38:/var/lib/tomcat/webapps'
-}
-}
-}
 stage ('sonar check'){
 steps{
 withSonarQubeEnv('sonar') {
