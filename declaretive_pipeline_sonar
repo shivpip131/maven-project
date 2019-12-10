@@ -32,7 +32,10 @@ withMaven(jdk: 'jdklocal', maven: 'mavenlocal') {
 stage ('sonar check'){
 steps{
 withSonarQubeEnv('sonar') {
-sh 'mvn clean package sonar:sonar'}
+withMaven(maven : 'LocalMaven') {
+                        sh 'mvn clean package sonar:sonar'
+}
+}
 }
 }
 
