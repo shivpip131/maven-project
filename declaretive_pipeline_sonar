@@ -39,9 +39,8 @@ sshagent(['tomcat']) {
 }
 stage ('sonar check'){
 steps{
-withSonarQubeEnv(credentialsId: 'sonar') {
-    sh 'mvn clean 
-}
+withSonarQubeEnv('sonar') {
+sh 'mvn clean package sonar:sonar'}
 }
 }
 
