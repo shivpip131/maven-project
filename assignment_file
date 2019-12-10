@@ -1,6 +1,6 @@
 node {
 stage ('git scm') {
-sh 'https://github.com/shivpip131/maven-project.git' }
+git 'https://github.com/shivpip131/maven-project.git' }
 }
 node {
 stage('install packages') {
