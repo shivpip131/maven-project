@@ -39,7 +39,9 @@ sshagent(['tomcat']) {
 }
 stage ('sonar check'){
 steps{
-sonarToGerrit(notificationConfig: [commentedIssuesNotificationRecipient: 'NONE', negativeScoreNotificationRecipient: 'NONE'])
+withSonarQubeEnv(credentialsId: 'sonar') {
+    sh 'mvn clean 
+}
 }
 }
 
