@@ -1,8 +1,8 @@
-node('git clone') {
+node {
 stage ('git scm') {
 sh 'https://github.com/shivpip131/maven-project.git' }
 }
-node('install package') {
+node {
 stage('install packages') {
 withMaven(jdk: 'jdklocal', maven: 'mavenlocal') {
     sh 'mvn clean install'
