@@ -1,0 +1,3 @@
+node ('git clone') {
+stage ('git scm') {
+sh 'git 
