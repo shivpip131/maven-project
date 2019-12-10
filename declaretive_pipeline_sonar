@@ -37,7 +37,14 @@ sshagent(['tomcat']) {
 }
 }
 }
-stage
+stage ('sonar check'){
+steps{
+sonarToGerrit(notificationConfig: [commentedIssuesNotificationRecipient: 'NONE', negativeScoreNotificationRecipient: 'NONE'])
+}
+}
+
+
+
 
 }
 }
