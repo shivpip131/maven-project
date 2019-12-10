@@ -1,3 +1,6 @@
 node ('git clone') {
 stage ('git scm') {
-sh 'https://github.com/shivpip131/maven-project.git' 
+{sh 'https://github.com/shivpip131/maven-project.git' }
+}
+stage('install packages"
+
