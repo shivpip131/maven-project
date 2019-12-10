@@ -12,7 +12,7 @@ withMaven(jdk: 'jdklocal', maven: 'mavenlocal') {
 node {
 stage('deploy to tomcat') {
 sshagent(['tomcat']) {
-    sh 'scp -o StrictHostkeyChecking=no */target/*.war ec2-user@13.127.206.176:/var/lib/tomcat/webapps'
+    sh 'scp -o StrictHostkeyChecking=no */target/*.war ec2-user@172.31.32.98:/var/lib/tomcat/webapps'
 }
 }
 }
